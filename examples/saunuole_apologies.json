@@ -1,0 +1,25 @@
+{
+  "brand": "saunuole",
+  "template": "three_tiers",
+  "spec": {
+    "topic": "Извинения по-литовски",
+    "emoji": "🙏",
+    "tiers": ["turistas", "vietinis", "lietuvis"],
+    "tier_labels_lt": ["Turistas", "Vietinis", "Lietuvis"],
+    "tier_labels_native": ["турист", "местный", "литовец"],
+    "cards": [
+      {
+        "lt": "Atsiprašau!",
+        "native": "Извините!"
+      },
+      {
+        "lt": "Labai atsiprašau, kad pavėlavau.",
+        "native": "Очень извиняюсь, что опоздал."
+      },
+      {
+        "lt": "Neturiu žodžių, kaip atsiprašyti.",
+        "native": "У меня нет слов, чтобы извиниться."
+      }
+    ]
+  }
+}

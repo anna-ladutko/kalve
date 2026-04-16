@@ -1,0 +1,28 @@
+{
+  "brand": "saunuole",
+  "template": "three_tiers",
+  "spec": {
+    "topic": "Комплименты еде в ресторане",
+    "emoji": "🍽️",
+    "tiers": ["turistas", "vietinis", "lietuvis"],
+    "tier_labels_lt": ["Turistas", "Vietinis", "Lietuvis"],
+    "tier_labels_native": ["турист", "местный", "литовец"],
+    "cards": [
+      {
+        "lt": "Labai skanu!",
+        "native": "Очень вкусно!"
+      },
+      {
+        "lt": "Patiekalas buvo tiesiog nuostabus.",
+        "native": "Блюдо было просто потрясающим."
+      },
+      {
+        "lt": "Net pirštus galima aplaižyti!",
+        "native": "Аж пальчики оближешь!"
+      }
+    ],
+    "cta_tagline": "Тренируй эти фразы\nбесплатно",
+    "cta_label": "Переходи на",
+    "cta_url": "saunuolė.lt/t"
+  }
+}

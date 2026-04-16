@@ -1,0 +1,172 @@
+# kalve
+
+**Генератор брендированных визуалов для соцсетей из JSON-спецификации.**
+
+Пишешь что должно быть на карточке — получаешь готовый набор PNG в фирменном стиле. Никакого Canva, никакого Figma, никакой ручной вёрстки.
+
+Создан для проекта [Šaunuolė](https://saunuolė.lt) — тренажёра литовского языка, — но спроектирован как универсальный инструмент: подключаешь свой брендкит и получаешь карточки в своём стиле.
+
+---
+
+## Что умеет
+
+- **Шаблоны как код.** Один раз описали структуру карточки — рендерим сколько угодно вариантов с разным контентом.
+- **Брендкит отдельно от шаблона.** Цвета, шрифты, настройки — в одном файле. Меняешь брендкит — меняется весь вид.
+- **CLI и Python API.** Запускается одной командой или встраивается в пайплайн (N8N, скрипт, что угодно).
+- **Карусели для Threads и Instagram.** Формат 1080×1350, PNG, готовы к публикации.
+
+На v0.1 есть один шаблон — `three_tiers` (карусель из 4 карточек про три уровня владения). Дальше добавим Google Ads баннеры, OG-картинки, Stories и что ещё скажешь.
+
+---
+
+## Пример
+
+Что на входе:
+
+```json
+{
+  "brand": "saunuole",
+  "template": "three_tiers",
+  "spec": {
+    "topic": "Комплименты еде в ресторане",
+    "emoji": "🍽️",
+    "tiers": ["turistas", "vietinis", "lietuvis"],
+    "tier_labels_lt": ["Turistas", "Vietinis", "Lietuvis"],
+    "tier_labels_native": ["турист", "местный", "литовец"],
+    "cards": [
+      {"lt": "Labai skanu!", "native": "Очень вкусно!"},
+      {"lt": "Patiekalas buvo tiesiog nuostabus.",
+       "native": "Блюдо было просто потрясающим."},
+      {"lt": "Net pirštus galima aplaižyti!",
+       "native": "Аж пальчики оближешь!"}
+    ]
+  }
+}
+```
+
+Что на выходе: 4 PNG карточки размером 1080×1350, готовые к публикации каруселью в Threads или Instagram. Примеры лежат в [examples/sample_output/compliments/](examples/sample_output/compliments/).
+
+---
+
+## Установка
+
+Нужен Python 3.9+ и Pillow.
+
+```bash
+git clone https://github.com/anna-ladutko/kalve.git
+cd kalve
+pip install -r requirements.txt
+```
+
+Шрифты (Inter) уже лежат в `assets/fonts/` — скачивать отдельно не нужно.
+
+---
+
+## Использование
+
+### Через командную строку
+
+```bash
+python -m kalve examples/saunuole_compliments.json --output output/
+```
+
+Результат: 4 PNG в папке `output/`.
+
+### Через Python
+
+```python
+from kalve import generate
+from kalve.brands.saunuole import SAUNUOLE
+
+generate(
+    spec={
+        "topic": "Комплименты еде",
+        "emoji": "🍽️",
+        "tiers": ["turistas", "vietinis", "lietuvis"],
+        "tier_labels_lt": ["Turistas", "Vietinis", "Lietuvis"],
+        "tier_labels_native": ["турист", "местный", "литовец"],
+        "cards": [
+            {"lt": "Labai skanu!", "native": "Очень вкусно!"},
+            {"lt": "Patiekalas buvo nuostabus.",
+             "native": "Блюдо было потрясающим."},
+            {"lt": "Net pirštus galima aplaižyti!",
+             "native": "Аж пальчики оближешь!"},
+        ],
+    },
+    brand=SAUNUOLE,
+    template="three_tiers",
+    output_dir="output/",
+)
+```
+
+---
+
+## Архитектура
+
+Три слоя, каждый можно менять независимо:
+
+1. **Движок** (`kalve/drawing.py`, `kalve/typography.py`) — низкоуровневое рисование. Градиенты, скруглённые прямоугольники, pill-бейджи, шрифты, эмодзи. Редко трогается.
+
+2. **Шаблон** (`kalve/templates/three_tiers.py`) — что и где на карточке. Принимает брендкит и контент, расставляет элементы. Хочешь новый формат (Google Ads, Story, OG) — пишешь новый шаблон.
+
+3. **Брендкит** (`kalve/brands/saunuole.py`) — как это выглядит. Цвета, шрифты, скругления, фон. Хочешь другой бренд — пишешь свой файл.
+
+Подробнее — в [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+---
+
+## Как сделать свой брендкит
+
+Смотри [docs/BRAND_KIT_GUIDE.md](docs/BRAND_KIT_GUIDE.md) — пошаговая инструкция с примером.
+
+---
+
+## Структура репозитория
+
+```
+kalve/
+├── kalve/                    Основной пакет
+│   ├── __init__.py           Главный API
+│   ├── __main__.py           CLI
+│   ├── brand.py              Базовый класс BrandKit
+│   ├── drawing.py            Примитивы рисования
+│   ├── typography.py         Работа со шрифтами
+│   ├── colors.py             Утилиты цвета
+│   ├── brands/               Готовые брендкиты
+│   │   └── saunuole.py       Брендкит Šaunuolė
+│   └── templates/            Шаблоны карточек
+│       └── three_tiers.py    Карусель "три уровня владения"
+│
+├── assets/fonts/             Шрифты Inter
+│
+├── examples/                 Примеры входа и выхода
+│   ├── saunuole_compliments.json
+│   ├── saunuole_apologies.json
+│   └── sample_output/        Сгенерированные примеры (в git)
+│
+└── docs/                     Дополнительная документация
+    ├── ARCHITECTURE.md
+    └── BRAND_KIT_GUIDE.md
+```
+
+---
+
+## Планы
+
+- [ ] Шаблон `google_ads` — 10 размеров из одной спецификации
+- [ ] Шаблон `og_image` — Open Graph картинки для блога/сайта
+- [ ] Шаблон `story` — вертикальные Stories 1080×1920
+- [ ] Поддержка кастомных шрифтов из брендкита
+- [ ] Веб-интерфейс для не-программистов
+
+---
+
+## Лицензия
+
+MIT. Делайте с кодом что хотите. Единственное условие — шрифт Inter распространяется по SIL Open Font License 1.1.
+
+---
+
+## Происхождение
+
+Название — литовское слово «kalvė», то есть кузница. Потому что в этой штуке сырьё (JSON-спецификация) превращается в готовое изделие (картинка) одним нажатием.
