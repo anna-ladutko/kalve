@@ -24,3 +24,7 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Приватные стратегические заметки (не публикуются)
+STRATEGIC_STATE.md
+CURRENT_STATUS.md

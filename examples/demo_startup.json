@@ -1,0 +1,28 @@
+{
+  "brand": "default_dark",
+  "template": "three_tiers",
+  "spec": {
+    "topic": "How you explain your startup",
+    "emoji": "🚀",
+    "tiers": ["tier1", "tier2", "tier3"],
+    "tier_labels_lt": ["Elevator Pitch", "The Full Story", "Insider Mode"],
+    "tier_labels_native": ["30 seconds", "5 minutes", "one sentence"],
+    "cards": [
+      {
+        "lt": "It's like Canva but for devs",
+        "native": "We generate branded images from JSON"
+      },
+      {
+        "lt": "A Python tool that turns JSON specs into brand-consistent carousels",
+        "native": "No designer needed, pipes into any pipeline"
+      },
+      {
+        "lt": "pip install kalve",
+        "native": "That's it. That's the pitch."
+      }
+    ],
+    "cta_tagline": "Try it yourself\nfor free",
+    "cta_label": "Star us on",
+    "cta_url": "github.com/kalve"
+  }
+}

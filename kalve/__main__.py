@@ -24,6 +24,8 @@ from . import brands
 
 BRAND_REGISTRY = {
     "saunuole": brands.SAUNUOLE,
+    "default_dark": brands.DEFAULT_DARK,
+    "default_light": brands.DEFAULT_LIGHT,
 }
 
 
