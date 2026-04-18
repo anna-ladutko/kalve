@@ -16,26 +16,26 @@ Same JSON spec, three different brand kits — that's the point:
 
 **`default_dark`** — developer-native dark theme:
 <p align="center">
-  <img src="examples/sample_output/demo_dark/01_tier1.png" width="22%" alt="Dark tier 1" />
-  <img src="examples/sample_output/demo_dark/02_tier2.png" width="22%" alt="Dark tier 2" />
-  <img src="examples/sample_output/demo_dark/03_tier3.png" width="22%" alt="Dark tier 3" />
-  <img src="examples/sample_output/demo_dark/04_cta.png" width="22%" alt="Dark CTA" />
+  <img src="https://raw.githubusercontent.com/anna-ladutko/kalve/main/examples/sample_output/demo_dark/01_tier1.png" width="22%" alt="Dark tier 1" />
+  <img src="https://raw.githubusercontent.com/anna-ladutko/kalve/main/examples/sample_output/demo_dark/02_tier2.png" width="22%" alt="Dark tier 2" />
+  <img src="https://raw.githubusercontent.com/anna-ladutko/kalve/main/examples/sample_output/demo_dark/03_tier3.png" width="22%" alt="Dark tier 3" />
+  <img src="https://raw.githubusercontent.com/anna-ladutko/kalve/main/examples/sample_output/demo_dark/04_cta.png" width="22%" alt="Dark CTA" />
 </p>
 
 **`default_light`** — clean minimal light theme:
 <p align="center">
-  <img src="examples/sample_output/demo_light/01_tier1.png" width="22%" alt="Light tier 1" />
-  <img src="examples/sample_output/demo_light/02_tier2.png" width="22%" alt="Light tier 2" />
-  <img src="examples/sample_output/demo_light/03_tier3.png" width="22%" alt="Light tier 3" />
-  <img src="examples/sample_output/demo_light/04_cta.png" width="22%" alt="Light CTA" />
+  <img src="https://raw.githubusercontent.com/anna-ladutko/kalve/main/examples/sample_output/demo_light/01_tier1.png" width="22%" alt="Light tier 1" />
+  <img src="https://raw.githubusercontent.com/anna-ladutko/kalve/main/examples/sample_output/demo_light/02_tier2.png" width="22%" alt="Light tier 2" />
+  <img src="https://raw.githubusercontent.com/anna-ladutko/kalve/main/examples/sample_output/demo_light/03_tier3.png" width="22%" alt="Light tier 3" />
+  <img src="https://raw.githubusercontent.com/anna-ladutko/kalve/main/examples/sample_output/demo_light/04_cta.png" width="22%" alt="Light CTA" />
 </p>
 
 **`saunuole`** — a real brand (Lithuanian language tutor):
 <p align="center">
-  <img src="examples/sample_output/compliments/01_turistas.png" width="22%" alt="Saunuole tier 1" />
-  <img src="examples/sample_output/compliments/02_vietinis.png" width="22%" alt="Saunuole tier 2" />
-  <img src="examples/sample_output/compliments/03_lietuvis.png" width="22%" alt="Saunuole tier 3" />
-  <img src="examples/sample_output/compliments/04_cta.png" width="22%" alt="Saunuole CTA" />
+  <img src="https://raw.githubusercontent.com/anna-ladutko/kalve/main/examples/sample_output/compliments/01_turistas.png" width="22%" alt="Saunuole tier 1" />
+  <img src="https://raw.githubusercontent.com/anna-ladutko/kalve/main/examples/sample_output/compliments/02_vietinis.png" width="22%" alt="Saunuole tier 2" />
+  <img src="https://raw.githubusercontent.com/anna-ladutko/kalve/main/examples/sample_output/compliments/03_lietuvis.png" width="22%" alt="Saunuole tier 3" />
+  <img src="https://raw.githubusercontent.com/anna-ladutko/kalve/main/examples/sample_output/compliments/04_cta.png" width="22%" alt="Saunuole CTA" />
 </p>
 
 ---
