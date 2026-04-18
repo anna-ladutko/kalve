@@ -171,7 +171,7 @@ kalve/
 │   └── templates/            Шаблоны карточек
 │       └── three_tiers.py    Карусель "три уровня владения"
 │
-├── assets/fonts/             Шрифты Inter
+├── kalve/assets/fonts/       Шрифты Inter (поставляются с пакетом)
 │
 ├── examples/                 Примеры входа и выхода
 │   ├── saunuole_compliments.json

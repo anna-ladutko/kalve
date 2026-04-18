@@ -196,7 +196,7 @@ kalve/
 │   └── templates/            Card layouts (logic)
 │       └── three_tiers.py    "3 skill levels + CTA" carousel
 │
-├── assets/fonts/             Inter font family
+├── kalve/assets/fonts/       Inter font family (shipped with the package)
 ├── examples/                 Sample JSON specs and rendered PNGs
 │
 ├── docs/

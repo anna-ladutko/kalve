@@ -74,7 +74,7 @@ kalve/
 │   └── templates/             Card layouts (logic)
 │       └── three_tiers.py     Reference template: 3 skill-level cards + CTA
 │
-├── assets/fonts/              Inter font family (ships with repo)
+├── kalve/assets/fonts/        Inter font family (ships with the package)
 ├── examples/                  Sample JSON specs and rendered PNGs
 ├── docs/                      Human-facing documentation
 ├── CLAUDE.md                  ← You are here

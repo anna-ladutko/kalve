@@ -19,7 +19,7 @@ INTER_WEIGHTS = {
 def get_fonts_dir():
     """Вернуть путь к папке со шрифтами kalve."""
     here = os.path.dirname(os.path.abspath(__file__))
-    return os.path.join(here, "..", "assets", "fonts")
+    return os.path.join(here, "assets", "fonts")
 
 
 def font(weight, size, fonts_dir=None):
@@ -44,7 +44,7 @@ def font(weight, size, fonts_dir=None):
     if not os.path.exists(path):
         raise FileNotFoundError(
             f"Шрифт не найден: {path}. "
-            f"Убедись что файлы Inter лежат в assets/fonts/"
+            f"Убедись что файлы Inter лежат в kalve/assets/fonts/"
         )
 
     return ImageFont.truetype(path, size)
